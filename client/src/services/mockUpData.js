@@ -82,5 +82,30 @@ export const playlistMockUp = [
         duration: "3:29",
       },
     ],
+  },{
+    id: 5,
+    title: "Camper playlist",
+    description: "This is a playlist for camper",
+    cover:
+        "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da849d25907759522a25b86a3033",
+    author_id: 4,
+    image_url: "https://cdn-icons-png.flaticon.com/512/8847/8847419.png",
+    author: "user2",
+    type: "Private",
+    duration: "3 min 29 sec",
+    edit_access: true,
+    tracks: [
+      {
+        id: 4,
+        track_id: 4,
+        title: "Astronaut In The Ocean",
+        cover:
+            "https://i.scdn.co/image/ab67616d0000b27397fdd7cf1b14d78c6a7fb17f",
+        artist: "Pop Smoke",
+        album: "Shoot For The Stars Aim For The Moon",
+        date_added: "Dec 31, 2024",
+        duration: "3:29",
+      },
+    ],
   },
 ];
