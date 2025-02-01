@@ -1,9 +1,13 @@
 import express from 'express'
-import {getOwnedPlaylist} from "../controllers/playlistController.js";
+import * as playlistsController from '../controllers/playlistController.js'
 
 const playlistRoute = express.Router();
 
-playlistRoute.get("",getOwnedPlaylist);
+playlistRoute.get("/owned",playlistsController.getOwnedPlaylist);
+
+playlistRoute.get("/",playlistsController.getUserPlaylists);
+
+playlistRoute.get("/:playlistId",playlistsController.getUserPlaylistById)
 
 export default playlistRoute;
 

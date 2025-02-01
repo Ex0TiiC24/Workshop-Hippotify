@@ -24,6 +24,7 @@ import { Button } from "../components/ui/button";
 import TrackCard from "../components/TrackCard";
 import { useEffect, useState } from "react";
 import { playlistMockUp } from "../services/MockUpData";
+import { getPlaylists, getPlaylistsById } from "../services/getPlaylists";
 
 export default function Playlist() {
   const id = useParams().id || 1;
@@ -41,8 +42,11 @@ export default function Playlist() {
   };
   const fetchPlaylistData = async () => {
     // insert your code here
-    const fetchedPlaylist = playlistMockUp.find((item) => item.id == id);
+    
+    const fetchedPlaylist = await getPlaylistsById(id || 1);
+    console.log(fetchedPlaylist)
     setPlaylist(fetchedPlaylist); 
+
   };
   useEffect(() => {
     fetchPlaylistData();
@@ -96,14 +100,14 @@ export default function Playlist() {
                 pt={"10px"}
                 gap={"5px"}
               >
-                <Image src={playlist.image_url} height={"22px"} />
+                <Image src={playlist.image} height={"22px"} />
                 <Text>
-                  {playlist.author} - {playlist.tracks?.length} songs,{" "}
+                  {playlist.author_name} - {playlist.tracks?.length} songs,{" "}
                   {playlist.duration}
                 </Text>
               </Flex>
             </Box>
-          )}
+          )}  
           {playlist?.edit_access && (
             <DialogRoot placement={"center"}>
               <DialogTrigger asChild>
