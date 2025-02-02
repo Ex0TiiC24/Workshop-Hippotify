@@ -10,7 +10,6 @@ export default function SideBar() {
 
   const fetchPlaylistData = async () => {
     const response = await getPlaylists();
-    console.log(response);
     setPlaylist(response);
   };
   useEffect(() => {

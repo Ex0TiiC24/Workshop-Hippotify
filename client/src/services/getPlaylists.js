@@ -23,3 +23,18 @@ export const getPlaylistsById = async (id) =>{
         return e.response
     }
 }
+
+export const updatePlaylist = async (id,title,description) =>{
+    try{
+        const response = await axiosInstance.put(`/playlists/${id || 1}`
+        ,{
+            title:title,
+            description:description
+        })
+        console.log(response.data)
+        return response.data    
+    }
+    catch (e) {
+        return e.response
+    }
+}
