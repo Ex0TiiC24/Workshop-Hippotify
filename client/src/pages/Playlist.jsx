@@ -23,7 +23,7 @@ import {
 import { Button } from "../components/ui/button";
 import TrackCard from "../components/TrackCard";
 import { useEffect, useState } from "react";
-import { playlistMockUp } from "../services/MockUpData";
+import { playlistMockUp } from "../services/getPlaylists.js";
 import { getPlaylists, getPlaylistsById, updatePlaylist } from "../services/getPlaylists";
 
 export default function Playlist() {
